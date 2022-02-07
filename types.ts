@@ -16,4 +16,3 @@ export type HomeTabParamList = {
 export type LatestTabParamList = {
   LatestScreen: undefined;
 };
-
