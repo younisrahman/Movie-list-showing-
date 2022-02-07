@@ -3,10 +3,10 @@ import TimeLogo from '@app/assets/images/time-outline.svg';
 import PieLogoFill from '@app/assets/images/pie-chart-filled.svg';
 import PieLogo from '@app/assets/images/pie-chart.svg';
 
-import {GenericAppBar} from '@app/components/AppBar';
-import {LatestScreen, HomeScreen} from '@app/screens';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import { GenericAppBar } from '@app/components/AppBar';
+import { LatestScreen, HomeScreen } from '@app/screens';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import * as React from 'react';
 import {
   BottomTabParamList,
@@ -21,13 +21,14 @@ export default function BottomTabNavigator() {
       initialRouteName="HomeTab"
       screenOptions={{
         tabBarShowLabel: false,
-      }}>
+      }}
+    >
       <BottomTab.Screen
         name="HomeTab"
         component={HomeTabNavigator}
         options={{
           headerShown: false,
-          tabBarIcon: ({focused}) =>
+          tabBarIcon: ({ focused }) =>
             focused ? <TimeLogoFill /> : <TimeLogo />,
         }}
       />
@@ -37,7 +38,8 @@ export default function BottomTabNavigator() {
         component={LatestTabNavigator}
         options={{
           headerShown: false,
-          tabBarIcon: ({focused}) => (focused ? <PieLogoFill /> : <PieLogo />),
+          tabBarIcon: ({ focused }) =>
+            focused ? <PieLogoFill /> : <PieLogo />,
         }}
       />
     </BottomTab.Navigator>

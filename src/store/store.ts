@@ -1,9 +1,9 @@
-import {configureStore, getDefaultMiddleware} from '@reduxjs/toolkit';
-import {persistStore, persistReducer} from 'redux-persist';
-import {useDispatch, TypedUseSelectorHook, useSelector} from 'react-redux';
+import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
+import { persistStore, persistReducer } from 'redux-persist';
+import { useDispatch, TypedUseSelectorHook, useSelector } from 'react-redux';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import logger from 'redux-logger';
-import rootReducer, {RootState} from './root-reducer';
+import rootReducer, { RootState } from './root-reducer';
 
 const persistConfig = {
   key: 'root',
@@ -14,7 +14,7 @@ const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 const middleware = [
   ...(__DEV__ ? [logger] : []),
-  ...getDefaultMiddleware({serializableCheck: false}),
+  ...getDefaultMiddleware({ serializableCheck: false }),
 ];
 
 const store = configureStore({
@@ -31,4 +31,4 @@ export const useAppDispatch = () => useDispatch<AppDispatch>();
 
 export const useTypedSelector: TypedUseSelectorHook<RootState> = useSelector;
 
-export {store, persistor};
+export { store, persistor };

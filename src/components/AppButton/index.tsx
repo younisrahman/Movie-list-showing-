@@ -1,12 +1,17 @@
 import React from 'react';
-import {TouchableOpacity, StyleProp, ViewStyle, StyleSheet} from 'react-native';
+import {
+  TouchableOpacity,
+  StyleProp,
+  ViewStyle,
+  StyleSheet,
+} from 'react-native';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 // import Icon from 'react-native-vector-icons/FontAwesome';
-import {Colors, FontFamily, FontSize} from '@app/config/theme';
-import {H7} from '@app/styles/typography';
+import { Colors, FontFamily, FontSize } from '@app/config/theme';
+import { H7 } from '@app/styles/typography';
 
 interface AppButtonProp {
   textStyle?: any;
@@ -29,16 +34,18 @@ const CustomButton: React.FC<AppButtonProp> = ({
       style={[
         styles.loginRegisterButtonProceed,
         isBorder === true
-          ? {backgroundColor: Colors.light4}
-          : {backgroundColor: Colors.primaryPurple},
+          ? { backgroundColor: Colors.light4 }
+          : { backgroundColor: Colors.primaryPurple },
         style,
-      ]}>
+      ]}
+    >
       <H7
         style={[
           styles.textChildrenStyling,
           // style,
-          isBorder ? {color: Colors.primaryPurple} : {color: Colors.light4},
-        ]}>
+          isBorder ? { color: Colors.primaryPurple } : { color: Colors.light4 },
+        ]}
+      >
         {children}
       </H7>
     </TouchableOpacity>
@@ -46,11 +53,16 @@ const CustomButton: React.FC<AppButtonProp> = ({
 };
 
 // CircleButton
-const CircleButton: React.FC<AppButtonProp> = ({style, onPress, children}) => {
+const CircleButton: React.FC<AppButtonProp> = ({
+  style,
+  onPress,
+  children,
+}) => {
   return (
     <TouchableOpacity
       onPress={onPress}
-      style={[styles.circleButtonProceed, style]}>
+      style={[styles.circleButtonProceed, style]}
+    >
       {children}
     </TouchableOpacity>
   );
@@ -81,6 +93,6 @@ const styles = StyleSheet.create({
   },
 });
 
-export {CustomButton, CircleButton};
+export { CustomButton, CircleButton };
 
 // export default TestButton;

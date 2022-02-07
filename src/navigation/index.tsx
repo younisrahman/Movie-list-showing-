@@ -1,7 +1,7 @@
-import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
-import {RootStackParamList} from '../../types';
+import { RootStackParamList } from '../../types';
 import BottomTabNavigator from './BottomTabNavigator';
 // import {RegisterScreen} from '../screens';
 
@@ -21,7 +21,7 @@ function RootNavigator() {
       <Stack.Screen
         name="Root"
         component={BottomTabNavigator}
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
       />
       {/* <Stack.Screen
         name="SignUp"

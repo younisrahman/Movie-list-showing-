@@ -23,4 +23,4 @@ export {
   LabelTiny,
 } from './typography';
 
-export {Shadow} from './shadow';
+export { Shadow } from './shadow';

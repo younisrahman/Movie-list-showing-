@@ -1,4 +1,4 @@
-import {createAsyncThunk, createSlice} from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import Axios from 'axios';
 
 interface IState {
@@ -56,16 +56,16 @@ const AuthSlice = createSlice({
   initialState: initState,
   reducers: {},
   extraReducers: builder => {
-    builder.addCase(getUserInfo.fulfilled, (state, {payload}) => {
+    builder.addCase(getUserInfo.fulfilled, (state, { payload }) => {
       if (payload?.user) {
         state.user = payload.user;
         state.id = state.id + 1;
       }
     });
-    builder.addCase(getUserInfo.rejected, (state, {payload}) => {
+    builder.addCase(getUserInfo.rejected, (state, { payload }) => {
       state.error = payload;
     });
-    builder.addCase(changeUser.fulfilled, (state, {payload}) => {
+    builder.addCase(changeUser.fulfilled, (state, { payload }) => {
       if (payload?.user) {
         state.user = payload.user;
         state.id = state.id + 1;

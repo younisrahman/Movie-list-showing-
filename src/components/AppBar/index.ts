@@ -1,1 +1,1 @@
-export {default as GenericAppBar} from './GenericAppBar';
+export { default as GenericAppBar } from './GenericAppBar';

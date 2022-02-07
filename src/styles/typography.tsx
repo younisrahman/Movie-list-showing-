@@ -1,6 +1,6 @@
 import React from 'react';
-import {Text, StyleSheet} from 'react-native';
-import {Colors, FontFamily, FontSize} from '@app/config/theme';
+import { Text, StyleSheet } from 'react-native';
+import { Colors, FontFamily, FontSize } from '@app/config/theme';
 interface text {
   children?: React.ReactChild | React.ReactChild[];
   style?: object;

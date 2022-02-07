@@ -1,4 +1,4 @@
-import {RFValue} from 'react-native-responsive-fontsize';
+import { RFValue } from 'react-native-responsive-fontsize';
 
 const FontSize = {
   XxxL: RFValue(32),

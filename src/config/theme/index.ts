@@ -3,4 +3,4 @@ import FontFamily from './FontFamily';
 import FontSize from './FontSize';
 import Padding from './Padding';
 
-export {Colors, FontFamily, FontSize, Padding};
+export { Colors, FontFamily, FontSize, Padding };

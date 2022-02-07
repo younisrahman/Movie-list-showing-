@@ -3,4 +3,4 @@ export {
   validatePassword,
   validateUsername,
 } from './loginValidator';
-export {validateEmail} from './profileValidator';
+export { validateEmail } from './profileValidator';

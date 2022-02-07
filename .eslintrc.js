@@ -26,7 +26,7 @@ module.exports = {
     'no-template-curly-in-string': 0,
     'react/jsx-filename-extension': [
       1,
-      {extensions: ['.js', '.jsx', '.ts', '.tsx']},
+      { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
     ],
     'import/prefer-default-export': 0,
     'no-confusing-arrow': 0,

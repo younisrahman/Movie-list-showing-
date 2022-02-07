@@ -1,5 +1,11 @@
 import React from 'react';
-import {View, StyleSheet, TextInput, StyleProp, ViewStyle} from 'react-native';
+import {
+  View,
+  StyleSheet,
+  TextInput,
+  StyleProp,
+  ViewStyle,
+} from 'react-native';
 // import { CircleButton } from '@app/components';
 // import FontAwsome from 'react-native-vector-icons/FontAwesome';
 // import AntDesign from 'react-native-vector-icons/AntDesign';
@@ -8,9 +14,9 @@ import {
   heightPercentageToDP as hp,
   widthPercentageToDP as wp,
 } from 'react-native-responsive-screen';
-import {Shadow} from '@app/styles/shadow';
-import {H7} from '@app/styles/typography';
-import {Colors, Padding} from '@app/theme';
+import { Shadow } from '@app/styles/shadow';
+import { H7 } from '@app/styles/typography';
+import { Colors, Padding } from '@app/theme';
 
 interface nameStyling {
   titleName?: string;

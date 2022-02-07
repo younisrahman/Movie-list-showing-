@@ -1,6 +1,6 @@
-import {combineReducers} from '@reduxjs/toolkit';
-import {TypedUseSelectorHook, useSelector} from 'react-redux';
-import {counterSlice, authSlice} from '@app/features';
+import { combineReducers } from '@reduxjs/toolkit';
+import { TypedUseSelectorHook, useSelector } from 'react-redux';
+import { counterSlice, authSlice } from '@app/features';
 
 const rootReducer = combineReducers({
   counter: counterSlice.reducer,

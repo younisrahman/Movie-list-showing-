@@ -1,9 +1,9 @@
 // import { useTheme } from 'styled-components';
-import {Colors} from '@app/theme';
+import { Colors } from '@app/theme';
 import React from 'react';
-import {Appbar} from 'react-native-paper';
+import { Appbar } from 'react-native-paper';
 
-function GenericAppBar({headerTitle}: {headerTitle: string}) {
+function GenericAppBar({ headerTitle }: { headerTitle: string }) {
   // const theme = useTheme();
 
   // const {
@@ -19,7 +19,7 @@ function GenericAppBar({headerTitle}: {headerTitle: string}) {
   // };
 
   return (
-    <Appbar style={{backgroundColor: Colors.light4, elevation: 4}}>
+    <Appbar style={{ backgroundColor: Colors.light4, elevation: 4 }}>
       <Appbar.Content
         accessibilityComponentType
         accessibilityTraits

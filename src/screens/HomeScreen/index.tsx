@@ -1,10 +1,10 @@
 import React from 'react';
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 import Animated, {
   useAnimatedScrollHandler,
   useSharedValue,
 } from 'react-native-reanimated';
-import {Page} from '@app/components';
+import { Page } from '@app/components';
 
 const WORDS = ["What's", 'up', 'dude', 'how', 'are', 'you', 'doing'];
 
@@ -20,7 +20,8 @@ const HomeScreen = () => {
       onScroll={scrollHandler}
       scrollEventThrottle={16}
       horizontal
-      style={styles.container}>
+      style={styles.container}
+    >
       {WORDS.map((title, index) => {
         return (
           <Page
