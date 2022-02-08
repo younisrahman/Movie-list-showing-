@@ -1,10 +1,9 @@
 import { combineReducers } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useSelector } from 'react-redux';
-import { counterSlice, authSlice } from '@app/features';
+import { movieSlice } from '@app/features';
 
 const rootReducer = combineReducers({
-  counter: counterSlice.reducer,
-  user: authSlice.reducer,
+  movies: movieSlice.reducer,
 });
 
 export type RootState = ReturnType<typeof rootReducer>;

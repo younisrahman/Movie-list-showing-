@@ -3,7 +3,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
 import { RootStackParamList } from '../../types';
 import BottomTabNavigator from './BottomTabNavigator';
-// import {RegisterScreen} from '../screens';
+import { MovieDetailsScreen } from '../screens';
 
 export default function Navigation() {
   return (
@@ -23,12 +23,11 @@ function RootNavigator() {
         component={BottomTabNavigator}
         options={{ headerShown: false }}
       />
-      {/* <Stack.Screen
-        name="SignUp"
-        component={RegisterScreen}
-        options={{headerShown: false}}
+      <Stack.Screen
+        name="MovieDetailsScreen"
+        component={MovieDetailsScreen}
+        options={{ headerShown: false }}
       />
-       */}
     </Stack.Navigator>
   );
 }

@@ -18,16 +18,14 @@ import {
 } from 'react-native-responsive-screen';
 
 interface PageProps {
-  title: string;
-  index: number;
   translateX: Animated.SharedValue<number>;
   style?: StyleProp<ViewProps>;
 }
 
 const { height, width } = Dimensions.get('window');
 const SIZE = width * 0.7;
-const Page: React.FC<PageProps> = ({ index, title, translateX, style }) => {
-  const inputRange = [(index - 1) * width, index * width, (index + 1) * width];
+const Page: React.FC<PageProps> = ({ translateX, style }) => {
+  const inputRange = [(1 - 1) * width, 9 * width, (1 + 1) * width];
   const rStyle = useAnimatedStyle(() => {
     const scale = interpolate(
       translateX.value,
@@ -66,22 +64,12 @@ const Page: React.FC<PageProps> = ({ index, title, translateX, style }) => {
     };
   });
   return (
-    <View
-      style={[
-        styles.pageContainer,
-        { backgroundColor: `rgba(0,0,250,.${index + 2})` },
-        style,
-      ]}
-    >
+    <View style={[styles.pageContainer, { backgroundColor: 'green' }, style]}>
       <Animated.View
-        style={[
-          styles.square,
-          { backgroundColor: `rgba(150,25,250,.${index + 2})` },
-          rStyle,
-        ]}
+        style={[styles.square, { backgroundColor: 'blue' }, rStyle]}
       >
         <Animated.View style={[{ position: 'absolute' }, rTextStyle]}>
-          <Text style={styles.title}>{title}</Text>
+          <Text style={styles.title}>Looad More</Text>
         </Animated.View>
       </Animated.View>
     </View>
@@ -105,7 +93,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 70,
-    color: 'white',
+    color: 'red',
     textTransform: 'uppercase',
     fontWeight: 'bold',
   },

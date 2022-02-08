@@ -29,7 +29,7 @@ export default function BottomTabNavigator() {
         options={{
           headerShown: false,
           tabBarIcon: ({ focused }) =>
-            focused ? <TimeLogoFill /> : <TimeLogo />,
+            focused ? <PieLogoFill /> : <PieLogo />,
         }}
       />
 
@@ -39,7 +39,7 @@ export default function BottomTabNavigator() {
         options={{
           headerShown: false,
           tabBarIcon: ({ focused }) =>
-            focused ? <PieLogoFill /> : <PieLogo />,
+            focused ? <TimeLogoFill /> : <TimeLogo />,
         }}
       />
     </BottomTab.Navigator>
