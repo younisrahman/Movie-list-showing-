@@ -12,6 +12,9 @@ import { Colors } from '@app/config/theme';
 const LatestScreen = () => {
   const { latestMovie } = useSelector((state: RootState) => state.movies);
   const movies = [latestMovie];
+  console.log('====================================');
+  console.log(movies);
+  console.log('====================================');
 
   const translateX = useSharedValue(0);
 
