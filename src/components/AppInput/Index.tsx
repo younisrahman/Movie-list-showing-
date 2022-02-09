@@ -14,7 +14,7 @@ import {
   heightPercentageToDP as hp,
   widthPercentageToDP as wp,
 } from 'react-native-responsive-screen';
-import { Shadow } from '@app/styles/shadow';
+import { Shadow } from '@app/styles/Shadow';
 import { H7 } from '@app/styles/typography';
 import { Colors, Padding } from '@app/theme';
 
