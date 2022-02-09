@@ -19,6 +19,7 @@ const Colors = {
   Dark2: '#18152C',
   White: '#FFFFFF',
   Grey: '#BDBDBD',
+  Grey1: '#7D7D7D',
   Grey4: '#F2F2F2',
 };
 export default Colors;

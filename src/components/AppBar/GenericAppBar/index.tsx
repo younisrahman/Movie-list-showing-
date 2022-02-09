@@ -1,54 +1,44 @@
-// import { useTheme } from 'styled-components';
-import { Colors } from '@app/theme';
 import React from 'react';
 import { Appbar } from 'react-native-paper';
+import { Colors, FontFamily, FontSize } from '@app/theme';
+import { useNavigation } from '@react-navigation/native';
 
-function GenericAppBar({ headerTitle }: { headerTitle: string }) {
-  // const theme = useTheme();
+interface GenericAppBarprops {
+  headerTitle: string;
+  isBackButton?: boolean;
+}
 
-  // const {
-  //   descriptor: {
-  //     options: { headerTitle },
-  //   },
-  // } = scene;
-
-  // const onSubmit = () => {
-  //   navigation.navigate('SearchScreen', {
-  //     searchString: 'Physics',
-  //   });
-  // };
-
+function GenericAppBar({
+  headerTitle,
+  isBackButton = false,
+}: GenericAppBarprops) {
+  const navigation = useNavigation();
   return (
-    <Appbar style={{ backgroundColor: Colors.light4, elevation: 4 }}>
+    <Appbar style={{ backgroundColor: Colors.White, elevation: 4 }}>
+      {isBackButton && (
+        <Appbar.BackAction
+          color={Colors.Black}
+          onPress={() => {
+            navigation.goBack();
+          }}
+        />
+      )}
+
       <Appbar.Content
-        accessibilityComponentType
-        accessibilityTraits
+        titleStyle={{
+          color: Colors.Black,
+          fontFamily: FontFamily.RubikB,
+          fontSize: FontSize.L,
+          fontWeight: '600',
+        }}
         title={headerTitle}
       />
-
-      <Appbar.Action
-        accessibilityComponentType
-        accessibilityTraits
-        icon="magnify"
-        onPress={
-          () => {
-            console.log('Search');
-          }
-          // navigation.navigate('NotificationScreen')
-        }
-      />
-
-      <Appbar.Action
-        accessibilityComponentType
-        accessibilityTraits
-        icon="bell"
-        onPress={
-          () => {
-            console.log('Notification');
-          }
-          // navigation.navigate('NotificationScreen')
-        }
-      />
+      {!isBackButton && (
+        <>
+          <Appbar.Action icon="magnify" />
+          <Appbar.Action icon="bell" />
+        </>
+      )}
     </Appbar>
   );
 }

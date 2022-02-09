@@ -26,7 +26,9 @@ function RootNavigator() {
       <Stack.Screen
         name="MovieDetailsScreen"
         component={MovieDetailsScreen}
-        options={{ headerShown: false }}
+        options={{
+          headerShown: false,
+        }}
       />
     </Stack.Navigator>
   );

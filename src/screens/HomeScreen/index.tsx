@@ -1,31 +1,34 @@
 import React, { useEffect } from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import Animated, {
   useAnimatedScrollHandler,
   useSharedValue,
 } from 'react-native-reanimated';
 import { useSelector } from 'react-redux';
-import { Page, LoadMore } from '@app/components';
+import LottieView from 'lottie-react-native';
+import { Page } from '@app/components';
 import { useAppDispatch } from '@app/store/store';
 import { getPopularMovie, getLatestMovie } from '@app/features/Movie/reducer';
 import { RootState } from '@app/store/root-reducer';
-import { Colors } from '@app/config/theme';
-
-// https://www.themoviedb.org/t/p/w600_and_h900_bestv2/k0ThmZQl5nHe4JefC2bXjqtgYp0.jpg
-const WORDS = ["What's", 'up', 'dude', 'how', 'are', 'you', 'doing'];
+import { Colors, FontFamily } from '@app/config/theme';
+import { BodyMedium } from '@app/styles/typography';
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from 'react-native-responsive-screen';
 
 const HomeScreen = () => {
+  let animation = React.createRef();
   const dispatch = useAppDispatch();
-  const { latestMovie, popularMovie } = useSelector(
-    (state: RootState) => state.movies,
-  );
+  const { popularMovie } = useSelector((state: RootState) => state.movies);
 
-  console.log('latestMovie====================================');
-  console.log(latestMovie);
-  console.log(popularMovie);
-  console.log('====================================popularMovie');
   const translateX = useSharedValue(0);
 
+  useEffect(() => {
+    if (!popularMovie) {
+      animation.current.play();
+    }
+  }, []);
   useEffect(() => {
     (async () => {
       await dispatch(getPopularMovie());
@@ -44,33 +47,49 @@ const HomeScreen = () => {
       horizontal
       style={styles.container}
       contentContainerStyle={{
-        alignItems: 'center',
+        alignItems: 'flex-start',
         justifyContent: 'center',
       }}
     >
-      {WORDS.map((title, index) => {
-        return (
-          <Page
-            key={index.toString()}
-            title={title}
-            index={index}
-            translateX={translateX}
-            // style={{ marginLeft: index === 0 ? wp(5) : 0 }}
+      {!popularMovie ? (
+        <View
+          style={{
+            height: hp(50),
+            width: wp(100),
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
+          <LottieView
+            ref={animation}
+            style={{
+              width: 350,
+              height: 350,
+            }}
+            source={require('../../assets/01.json')}
           />
-        );
-      })}
-      <LoadMore
-        key={99999}
-        translateX={translateX}
-        // style={{ marginLeft: index === 0 ? wp(5) : 0 }}
-      />
+          <BodyMedium style={{ fontFamily: FontFamily.RubikB }}>
+            Loading ...
+          </BodyMedium>
+        </View>
+      ) : (
+        popularMovie?.results?.map((movie, index) => {
+          return (
+            <Page
+              key={index.toString()}
+              data={movie}
+              index={index}
+              translateX={translateX}
+            />
+          );
+        })
+      )}
     </Animated.ScrollView>
   );
 };
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
-    backgroundColor: Colors.White,
+    backgroundColor: Colors.Grey4,
   },
 });
 export default HomeScreen;

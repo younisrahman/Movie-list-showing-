@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "flexDirection": "row",
+      "marginTop": 10,
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "color": "#000",
+        "fontFamily": "Rubik-Bold",
+      }
+    }
+  >
+    hi
+     :
+     
+  </Text>
+  <Text
+    style={
+      Object {
+        "color": "#000",
+        "fontFamily": "Rubik-Medium",
+      }
+    }
+  >
+    ook
+  </Text>
+</View>
+`;
