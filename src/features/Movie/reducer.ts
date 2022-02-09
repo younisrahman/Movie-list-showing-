@@ -60,7 +60,6 @@ export const movieDetails = createAsyncThunk('auth/movieDetails', async id => {
 
 const initState: IState = {
   latestMovie: {},
-  popularMovie: [],
   movieFullDetails: {},
 };
 
