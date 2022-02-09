@@ -77,7 +77,10 @@ const Page: React.FC<PageProps> = ({ index, translateX, data }) => {
       >
         <Animated.Image
           source={{
-            uri: `https://www.themoviedb.org/t/p/w600_and_h900_bestv2/${data.poster_path}`,
+            uri:
+              data?.poster_path !== null
+                ? `https://www.themoviedb.org/t/p/w600_and_h900_bestv2/${data?.poster_path}`
+                : 'https://bitsofco.de/content/images/2018/12/broken-1.png',
           }}
           style={[
             styles.image,
